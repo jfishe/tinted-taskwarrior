@@ -1,0 +1,90 @@
+# tinted-taskwarrior
+# Scheme name: Lumina Rayleigh Light
+# Scheme author: Razik Ikhlef (https://github.com/RazikSF)
+# Scheme: base24-lumina-rayleigh-light (light)
+#
+# Template: https://github.com/jfishe/tinted-taskwarrior
+# Rule set modelled on Taskwarrior's solarized-dark-256.theme
+# (Copyright 2006 - 2021, Tomas Babej, Paul Beckingham, Federico Hernandez;
+# MIT License, see THIRD-PARTY-NOTICES.md).
+#
+# Taskwarrior supports at most 256 colors. Each scheme color has been mapped to
+# the nearest xterm-256 color (rgbRGB cube or grayN ramp, CIEDE2000); the
+# trailing comment on each line gives the original scheme hex. Cube entries
+# 16-21 are never used because tinted-shell redefines them.
+#
+# Usage, in a taskrc:
+#   include ~/.local/share/tinted-theming/tinty/tinted-taskwarrior-taskwarrior-file.theme
+
+rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
+
+# General decoration
+color.label=rgb444  # #c8d6df
+color.label.sort=rgb013  # #0160a7
+color.alternate=on gray23  # #e3f2fb
+color.header=rgb013  # #0160a7
+color.footnote=rgb011  # #056271
+color.warning=gray23 on rgb310  # #edf8ff on #a35f00
+color.error=rgb200  # #94171b
+color.debug=rgb011  # #056271
+
+# Task state
+color.completed=rgb444  # #c8d6df
+color.deleted=rgb444  # #c8d6df
+color.active=gray23 on rgb021  # #edf8ff on #1e773b
+color.recurring=rgb011  # #056271
+color.scheduled=rgb013  # #0160a7
+color.until=
+color.blocked=rgb444  # #c8d6df
+color.blocking=gray23 on rgb213  # #edf8ff on #7244a9
+
+# Project
+color.project.none=
+
+# Priority
+color.uda.priority.H=rgb310  # #a14e14
+color.uda.priority.M=rgb310  # #a35f00
+color.uda.priority.L=rgb013  # #0160a7
+
+# Tags
+color.tag.next=rgb213  # #7244a9
+color.tag.none=
+color.tagged=
+
+# Due
+color.due=rgb310  # #a35f00
+color.due.today=rgb310  # #a14e14
+color.overdue=rgb200  # #94171b
+
+# Report: burndown
+color.burndown.done=gray23 on rgb021  # #edf8ff on #1e773b
+color.burndown.pending=gray23 on rgb200  # #edf8ff on #94171b
+color.burndown.started=gray23 on rgb310  # #edf8ff on #a35f00
+
+# Report: history
+color.history.add=gray23 on rgb200  # #edf8ff on #94171b
+color.history.delete=gray23 on rgb310  # #edf8ff on #a35f00
+color.history.done=gray23 on rgb021  # #edf8ff on #1e773b
+
+# Report: summary
+color.summary.background=on gray23  # #e3f2fb
+color.summary.bar=gray23 on rgb021  # #edf8ff on #1e773b
+
+# Command: calendar
+color.calendar.due=gray23 on rgb310  # #edf8ff on #a35f00
+color.calendar.due.today=gray23 on rgb310  # #edf8ff on #a14e14
+color.calendar.holiday=gray23 on rgb213  # #edf8ff on #7244a9
+color.calendar.overdue=gray23 on rgb200  # #edf8ff on #94171b
+color.calendar.scheduled=gray23 on rgb013  # #edf8ff on #0160a7
+color.calendar.today=gray23 on rgb011  # #edf8ff on #056271
+color.calendar.weekend=rgb444  # #c8d6df
+color.calendar.weeknumber=rgb444  # #c8d6df
+
+# Command: sync
+color.sync.added=rgb021  # #1e773b
+color.sync.changed=rgb310  # #a35f00
+color.sync.rejected=rgb200  # #94171b
+
+# Command: undo
+color.undo.after=rgb021  # #1e773b
+color.undo.before=rgb200  # #94171b

@@ -1,0 +1,90 @@
+# tinted-taskwarrior
+# Scheme name: Jellybeans
+# Scheme author: FredHappyface (https://github.com/fredHappyface)
+# Scheme: base24-jellybeans (dark)
+#
+# Template: https://github.com/jfishe/tinted-taskwarrior
+# Rule set modelled on Taskwarrior's solarized-dark-256.theme
+# (Copyright 2006 - 2021, Tomas Babej, Paul Beckingham, Federico Hernandez;
+# MIT License, see THIRD-PARTY-NOTICES.md).
+#
+# Taskwarrior supports at most 256 colors. Each scheme color has been mapped to
+# the nearest xterm-256 color (rgbRGB cube or grayN ramp, CIEDE2000); the
+# trailing comment on each line gives the original scheme hex. Cube entries
+# 16-21 are never used because tinted-shell redefines them.
+#
+# Usage, in a taskrc:
+#   include ~/.local/share/tinted-theming/tinty/tinted-taskwarrior-taskwarrior-file.theme
+
+rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
+
+# General decoration
+color.label=gray19  # #c5c5c5
+color.label.sort=rgb234  # #97bedc
+color.alternate=on gray14  # #929292
+color.header=rgb234  # #97bedc
+color.footnote=rgb022  # #00988e
+color.warning=gray1 on rgb345  # #121212 on #b1d8f6
+color.error=rgb411  # #e27373
+color.debug=rgb022  # #00988e
+
+# Task state
+color.completed=gray19  # #c5c5c5
+color.deleted=gray19  # #c5c5c5
+color.active=gray1 on rgb231  # #121212 on #93b979
+color.recurring=rgb022  # #00988e
+color.scheduled=rgb234  # #97bedc
+color.until=
+color.blocked=gray19  # #c5c5c5
+color.blocking=gray1 on rgb435  # #121212 on #e1c0fa
+
+# Project
+color.project.none=
+
+# Priority
+color.uda.priority.H=rgb531  # #ffba7b
+color.uda.priority.M=rgb345  # #b1d8f6
+color.uda.priority.L=rgb234  # #97bedc
+
+# Tags
+color.tag.next=rgb435  # #e1c0fa
+color.tag.none=
+color.tagged=
+
+# Due
+color.due=rgb345  # #b1d8f6
+color.due.today=rgb531  # #ffba7b
+color.overdue=rgb411  # #e27373
+
+# Report: burndown
+color.burndown.done=gray1 on rgb231  # #121212 on #93b979
+color.burndown.pending=gray1 on rgb411  # #121212 on #e27373
+color.burndown.started=gray1 on rgb345  # #121212 on #b1d8f6
+
+# Report: history
+color.history.add=gray1 on rgb411  # #121212 on #e27373
+color.history.delete=gray1 on rgb345  # #121212 on #b1d8f6
+color.history.done=gray1 on rgb231  # #121212 on #93b979
+
+# Report: summary
+color.summary.background=on gray14  # #929292
+color.summary.bar=gray1 on rgb231  # #121212 on #93b979
+
+# Command: calendar
+color.calendar.due=gray1 on rgb345  # #121212 on #b1d8f6
+color.calendar.due.today=gray1 on rgb531  # #121212 on #ffba7b
+color.calendar.holiday=gray1 on rgb435  # #121212 on #e1c0fa
+color.calendar.overdue=gray1 on rgb411  # #121212 on #e27373
+color.calendar.scheduled=gray1 on rgb234  # #121212 on #97bedc
+color.calendar.today=gray1 on rgb022  # #121212 on #00988e
+color.calendar.weekend=gray19  # #c5c5c5
+color.calendar.weeknumber=gray19  # #c5c5c5
+
+# Command: sync
+color.sync.added=rgb231  # #93b979
+color.sync.changed=rgb345  # #b1d8f6
+color.sync.rejected=rgb411  # #e27373
+
+# Command: undo
+color.undo.after=rgb231  # #93b979
+color.undo.before=rgb411  # #e27373

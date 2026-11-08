@@ -1,0 +1,16 @@
+tags
+
+# Python
+__pycache__/
+*.py[cod]
+.ruff_cache/
+.pytest_cache/
+.venv/
+
+# Demo task environment
+demo/data/
+demo/current.theme
+demo/holidays.rc
+
+# build.sh scheme cache
+.cache/

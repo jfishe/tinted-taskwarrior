@@ -1,0 +1,10 @@
+base16:
+  filename: taskwarrior/{{ scheme-system }}-{{ scheme-slug }}.theme
+  supported-systems: [base16, base24]
+
+tinted8:
+  filename: taskwarrior/{{ scheme.system }}-{{ scheme.slug }}.theme
+  supported-systems: [tinted8]
+  supports:
+    tinted8-builder: "~0.2.0"
+    tinted8-styling: "~0.2.0"

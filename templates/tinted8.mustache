@@ -1,0 +1,90 @@
+# tinted-taskwarrior
+# Scheme name: {{scheme.name}}
+# Scheme author: {{scheme.author}}
+# Scheme: {{scheme.system}}-{{scheme.slug}} ({{variant}})
+#
+# Template: https://github.com/jfishe/tinted-taskwarrior
+# Rule set modelled on Taskwarrior's solarized-dark-256.theme
+# (Copyright 2006 - 2021, Tomas Babej, Paul Beckingham, Federico Hernandez;
+# MIT License, see THIRD-PARTY-NOTICES.md).
+#
+# Taskwarrior supports at most 256 colors. Each scheme color has been mapped to
+# the nearest xterm-256 color (rgbRGB cube or grayN ramp, CIEDE2000); the
+# trailing comment on each line gives the original scheme hex. Cube entries
+# 16-21 are never used because tinted-shell redefines them.
+#
+# Usage, in a taskrc:
+#   include ~/.local/share/tinted-theming/tinty/tinted-taskwarrior-taskwarrior-file.theme
+
+rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
+
+# General decoration
+color.label=hex:{{palette.gray.normal.hex}}
+color.label.sort=hex:{{palette.blue.normal.hex}}
+color.alternate=on hex:{{ui.highlight.line.background.hex}}
+color.header=hex:{{palette.blue.normal.hex}}
+color.footnote=hex:{{palette.cyan.normal.hex}}
+color.warning=hex:{{ui.global.background.normal.hex}} on hex:{{palette.yellow.normal.hex}}
+color.error=hex:{{palette.red.normal.hex}}
+color.debug=hex:{{palette.cyan.normal.hex}}
+
+# Task state
+color.completed=hex:{{palette.gray.normal.hex}}
+color.deleted=hex:{{palette.gray.normal.hex}}
+color.active=hex:{{ui.global.background.normal.hex}} on hex:{{palette.green.normal.hex}}
+color.recurring=hex:{{palette.cyan.normal.hex}}
+color.scheduled=hex:{{palette.blue.normal.hex}}
+color.until=
+color.blocked=hex:{{palette.gray.normal.hex}}
+color.blocking=hex:{{ui.global.background.normal.hex}} on hex:{{palette.magenta.normal.hex}}
+
+# Project
+color.project.none=
+
+# Priority
+color.uda.priority.H=hex:{{palette.orange.normal.hex}}
+color.uda.priority.M=hex:{{palette.yellow.normal.hex}}
+color.uda.priority.L=hex:{{palette.blue.normal.hex}}
+
+# Tags
+color.tag.next=hex:{{palette.magenta.normal.hex}}
+color.tag.none=
+color.tagged=
+
+# Due
+color.due=hex:{{palette.yellow.normal.hex}}
+color.due.today=hex:{{palette.orange.normal.hex}}
+color.overdue=hex:{{palette.red.normal.hex}}
+
+# Report: burndown
+color.burndown.done=hex:{{ui.global.background.normal.hex}} on hex:{{palette.green.normal.hex}}
+color.burndown.pending=hex:{{ui.global.background.normal.hex}} on hex:{{palette.red.normal.hex}}
+color.burndown.started=hex:{{ui.global.background.normal.hex}} on hex:{{palette.yellow.normal.hex}}
+
+# Report: history
+color.history.add=hex:{{ui.global.background.normal.hex}} on hex:{{palette.red.normal.hex}}
+color.history.delete=hex:{{ui.global.background.normal.hex}} on hex:{{palette.yellow.normal.hex}}
+color.history.done=hex:{{ui.global.background.normal.hex}} on hex:{{palette.green.normal.hex}}
+
+# Report: summary
+color.summary.background=on hex:{{ui.highlight.line.background.hex}}
+color.summary.bar=hex:{{ui.global.background.normal.hex}} on hex:{{palette.green.normal.hex}}
+
+# Command: calendar
+color.calendar.due=hex:{{ui.global.background.normal.hex}} on hex:{{palette.yellow.normal.hex}}
+color.calendar.due.today=hex:{{ui.global.background.normal.hex}} on hex:{{palette.orange.normal.hex}}
+color.calendar.holiday=hex:{{ui.global.background.normal.hex}} on hex:{{palette.magenta.normal.hex}}
+color.calendar.overdue=hex:{{ui.global.background.normal.hex}} on hex:{{palette.red.normal.hex}}
+color.calendar.scheduled=hex:{{ui.global.background.normal.hex}} on hex:{{palette.blue.normal.hex}}
+color.calendar.today=hex:{{ui.global.background.normal.hex}} on hex:{{palette.cyan.normal.hex}}
+color.calendar.weekend=hex:{{palette.gray.normal.hex}}
+color.calendar.weeknumber=hex:{{palette.gray.normal.hex}}
+
+# Command: sync
+color.sync.added=hex:{{palette.green.normal.hex}}
+color.sync.changed=hex:{{palette.yellow.normal.hex}}
+color.sync.rejected=hex:{{palette.red.normal.hex}}
+
+# Command: undo
+color.undo.after=hex:{{palette.green.normal.hex}}
+color.undo.before=hex:{{palette.red.normal.hex}}

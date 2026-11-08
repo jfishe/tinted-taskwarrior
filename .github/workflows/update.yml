@@ -1,0 +1,65 @@
+name: "Update with the latest tinted-theming colorschemes"
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 0" # https://crontab.guru/every-week
+  push:
+    branches: [main]
+    paths: ["src/**", "gen-templates.sh", "quantize.py", "templates/config.yaml", "build.sh", "tinty.toml"]
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  build-and-commit:
+    name: "Build and commit colorschemes"
+    runs-on: "ubuntu-latest"
+    permissions:
+      contents: write # push regenerated colorschemes to main
+    steps:
+      - name: "Fetch the repository code"
+        uses: "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1" # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: "Install uv"
+        uses: "astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884" # v10.3.0
+        with:
+          enable-cache: false
+
+      # Same tinty as local builds; bump together with your local install.
+      - name: "Install tinty"
+        uses: "jaxxstorm/action-install-gh-release@25e24d2d23ae098373794ef1d6faecb48ee52da8" # v3.0.0
+        with:
+          repo: "tinted-theming/tinty"
+          tag: "v0.35.0"
+
+      - name: "Install Taskwarrior"
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends taskwarrior
+
+      # Upstream schemes plus the [[schemes.extras]] in tinty.toml; the same
+      # script and inputs as a local build.
+      - name: "Build"
+        run: ./build.sh
+
+      - name: "Check that every theme loads in Taskwarrior"
+        run: uv run pytest
+
+      - name: "Commit the changes, if any"
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "Update with the latest tinted-theming colorschemes [skip ci]"
+          git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:${GITHUB_REF_NAME}"

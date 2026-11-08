@@ -1,0 +1,30 @@
+# Isolated Taskwarrior configuration for previewing tinted-taskwarrior themes.
+# Used only through demo/*.sh or .envrc (TASKRC/TASKDATA point into demo/), so
+# it never reads or writes ~/.taskrc, ~/.task, or any other task database.
+
+# demo/show.sh copies the theme to preview into demo/current.theme.
+include current.theme
+# Written by demo/holidays.sh for this year and next. The holidays.en-US.rc
+# bundled with Taskwarrior 2.6 stops at 2022, so it highlights nothing now.
+include holidays.rc
+
+color=on
+confirmation=off
+hooks=off
+recurrence=on
+recurrence.confirmation=no
+calendar.holidays=full
+# Taskwarrior colors due/overdue/due-today/scheduled days in the calendar only
+# when details are on; "sparse" does that without a long task list below it.
+calendar.details=sparse
+calendar.legend=yes
+weekstart=monday
+search.case.sensitive=false
+
+# No "news" (avoids the news nag on any version) and no "override" (the
+# TASKRC/TASKDATA override banner on every command).
+verbose=affected,blank,context,edit,header,footnote,label,new-id,project,special,sync,recur
+news.version=2.6.0
+
+# Show a column for every colored attribute in the default "next" report.
+report.next.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description.count,urgency

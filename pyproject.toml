@@ -1,0 +1,28 @@
+[project]
+name = "tinted-taskwarrior"
+version = "0.1.0"
+description = "Taskwarrior color themes for tinty (base16, base24, tinted8)"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[tool.ruff.lint]
+extend-select = ["I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.uv]
+# Match the Dependabot cooldown; uv.lock records this, so CI must see it too.
+exclude-newer = "7 days"
+
+[dependency-groups]
+dev = [
+    "pyrefly>=1.4.0",
+    "pytest>=9.2.0",
+    "ruff>=0.17.3",
+]
+
+[tool.pyrefly]
+search-path = [".", "tests"]

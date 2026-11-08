@@ -1,0 +1,90 @@
+# tinted-taskwarrior
+# Scheme name: Gruvbox Material Light, Medium
+# Scheme author: Mayush Kumar (https://github.com/MayushKumar), sainnhe (https://github.com/sainnhe/gruvbox-material-vscode)
+# Scheme: base16-gruvbox-material-light-medium (light)
+#
+# Template: https://github.com/jfishe/tinted-taskwarrior
+# Rule set modelled on Taskwarrior's solarized-dark-256.theme
+# (Copyright 2006 - 2021, Tomas Babej, Paul Beckingham, Federico Hernandez;
+# MIT License, see THIRD-PARTY-NOTICES.md).
+#
+# Taskwarrior supports at most 256 colors. Each scheme color has been mapped to
+# the nearest xterm-256 color (rgbRGB cube or grayN ramp, CIEDE2000); the
+# trailing comment on each line gives the original scheme hex. Cube entries
+# 16-21 are never used because tinted-shell redefines them.
+#
+# Usage, in a taskrc:
+#   include ~/.local/share/tinted-theming/tinty/tinted-taskwarrior-taskwarrior-file.theme
+
+rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
+
+# General decoration
+color.label=rgb332  # #bdae93
+color.label.sort=rgb122  # #45707a
+color.alternate=on rgb443  # #f2e5bc
+color.header=rgb122  # #45707a
+color.footnote=rgb121  # #4c7a5d
+color.warning=rgb554 on rgb310  # #fbf1c7 on #b47109
+color.error=rgb311  # #c14a4a
+color.debug=rgb121  # #4c7a5d
+
+# Task state
+color.completed=rgb332  # #bdae93
+color.deleted=rgb332  # #bdae93
+color.active=rgb554 on rgb120  # #fbf1c7 on #6c782e
+color.recurring=rgb121  # #4c7a5d
+color.scheduled=rgb122  # #45707a
+color.until=
+color.blocked=rgb332  # #bdae93
+color.blocking=rgb554 on rgb212  # #fbf1c7 on #945e80
+
+# Project
+color.project.none=
+
+# Priority
+color.uda.priority.H=rgb410  # #c35e0a
+color.uda.priority.M=rgb310  # #b47109
+color.uda.priority.L=rgb122  # #45707a
+
+# Tags
+color.tag.next=rgb212  # #945e80
+color.tag.none=
+color.tagged=
+
+# Due
+color.due=rgb310  # #b47109
+color.due.today=rgb410  # #c35e0a
+color.overdue=rgb311  # #c14a4a
+
+# Report: burndown
+color.burndown.done=rgb554 on rgb120  # #fbf1c7 on #6c782e
+color.burndown.pending=rgb554 on rgb311  # #fbf1c7 on #c14a4a
+color.burndown.started=rgb554 on rgb310  # #fbf1c7 on #b47109
+
+# Report: history
+color.history.add=rgb554 on rgb311  # #fbf1c7 on #c14a4a
+color.history.delete=rgb554 on rgb310  # #fbf1c7 on #b47109
+color.history.done=rgb554 on rgb120  # #fbf1c7 on #6c782e
+
+# Report: summary
+color.summary.background=on rgb443  # #f2e5bc
+color.summary.bar=rgb554 on rgb120  # #fbf1c7 on #6c782e
+
+# Command: calendar
+color.calendar.due=rgb554 on rgb310  # #fbf1c7 on #b47109
+color.calendar.due.today=rgb554 on rgb410  # #fbf1c7 on #c35e0a
+color.calendar.holiday=rgb554 on rgb212  # #fbf1c7 on #945e80
+color.calendar.overdue=rgb554 on rgb311  # #fbf1c7 on #c14a4a
+color.calendar.scheduled=rgb554 on rgb122  # #fbf1c7 on #45707a
+color.calendar.today=rgb554 on rgb121  # #fbf1c7 on #4c7a5d
+color.calendar.weekend=rgb332  # #bdae93
+color.calendar.weeknumber=rgb332  # #bdae93
+
+# Command: sync
+color.sync.added=rgb120  # #6c782e
+color.sync.changed=rgb310  # #b47109
+color.sync.rejected=rgb311  # #c14a4a
+
+# Command: undo
+color.undo.after=rgb120  # #6c782e
+color.undo.before=rgb311  # #c14a4a

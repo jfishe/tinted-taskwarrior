@@ -1,0 +1,86 @@
+#
+# Template: https://github.com/jfishe/tinted-taskwarrior
+# Rule set modelled on Taskwarrior's solarized-dark-256.theme
+# (Copyright 2006 - 2021, Tomas Babej, Paul Beckingham, Federico Hernandez;
+# MIT License, see THIRD-PARTY-NOTICES.md).
+#
+# Taskwarrior supports at most 256 colors. Each scheme color has been mapped to
+# the nearest xterm-256 color (rgbRGB cube or grayN ramp, CIEDE2000); the
+# trailing comment on each line gives the original scheme hex. Cube entries
+# 16-21 are never used because tinted-shell redefines them.
+#
+# Usage, in a taskrc:
+#   include ~/.local/share/tinted-theming/tinty/tinted-taskwarrior-taskwarrior-file.theme
+
+rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
+
+# General decoration
+color.label=hex:@COMMENT@
+color.label.sort=hex:@BLUE@
+color.alternate=on hex:@BG_ALT@
+color.header=hex:@BLUE@
+color.footnote=hex:@CYAN@
+color.warning=hex:@BG@ on hex:@YELLOW@
+color.error=hex:@RED@
+color.debug=hex:@CYAN@
+
+# Task state
+color.completed=hex:@COMMENT@
+color.deleted=hex:@COMMENT@
+color.active=hex:@BG@ on hex:@GREEN@
+color.recurring=hex:@CYAN@
+color.scheduled=hex:@BLUE@
+color.until=
+color.blocked=hex:@COMMENT@
+color.blocking=hex:@BG@ on hex:@MAGENTA@
+
+# Project
+color.project.none=
+
+# Priority
+color.uda.priority.H=hex:@ORANGE@
+color.uda.priority.M=hex:@YELLOW@
+color.uda.priority.L=hex:@BLUE@
+
+# Tags
+color.tag.next=hex:@MAGENTA@
+color.tag.none=
+color.tagged=
+
+# Due
+color.due=hex:@YELLOW@
+color.due.today=hex:@ORANGE@
+color.overdue=hex:@RED@
+
+# Report: burndown
+color.burndown.done=hex:@BG@ on hex:@GREEN@
+color.burndown.pending=hex:@BG@ on hex:@RED@
+color.burndown.started=hex:@BG@ on hex:@YELLOW@
+
+# Report: history
+color.history.add=hex:@BG@ on hex:@RED@
+color.history.delete=hex:@BG@ on hex:@YELLOW@
+color.history.done=hex:@BG@ on hex:@GREEN@
+
+# Report: summary
+color.summary.background=on hex:@BG_ALT@
+color.summary.bar=hex:@BG@ on hex:@GREEN@
+
+# Command: calendar
+color.calendar.due=hex:@BG@ on hex:@YELLOW@
+color.calendar.due.today=hex:@BG@ on hex:@ORANGE@
+color.calendar.holiday=hex:@BG@ on hex:@MAGENTA@
+color.calendar.overdue=hex:@BG@ on hex:@RED@
+color.calendar.scheduled=hex:@BG@ on hex:@BLUE@
+color.calendar.today=hex:@BG@ on hex:@CYAN@
+color.calendar.weekend=hex:@COMMENT@
+color.calendar.weeknumber=hex:@COMMENT@
+
+# Command: sync
+color.sync.added=hex:@GREEN@
+color.sync.changed=hex:@YELLOW@
+color.sync.rejected=hex:@RED@
+
+# Command: undo
+color.undo.after=hex:@GREEN@
+color.undo.before=hex:@RED@

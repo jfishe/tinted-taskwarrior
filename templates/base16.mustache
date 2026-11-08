@@ -1,0 +1,90 @@
+# tinted-taskwarrior
+# Scheme name: {{scheme-name}}
+# Scheme author: {{scheme-author}}
+# Scheme: {{scheme-system}}-{{scheme-slug}} ({{scheme-variant}})
+#
+# Template: https://github.com/jfishe/tinted-taskwarrior
+# Rule set modelled on Taskwarrior's solarized-dark-256.theme
+# (Copyright 2006 - 2021, Tomas Babej, Paul Beckingham, Federico Hernandez;
+# MIT License, see THIRD-PARTY-NOTICES.md).
+#
+# Taskwarrior supports at most 256 colors. Each scheme color has been mapped to
+# the nearest xterm-256 color (rgbRGB cube or grayN ramp, CIEDE2000); the
+# trailing comment on each line gives the original scheme hex. Cube entries
+# 16-21 are never used because tinted-shell redefines them.
+#
+# Usage, in a taskrc:
+#   include ~/.local/share/tinted-theming/tinty/tinted-taskwarrior-taskwarrior-file.theme
+
+rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
+
+# General decoration
+color.label=hex:{{base03-hex}}
+color.label.sort=hex:{{base0D-hex}}
+color.alternate=on hex:{{base01-hex}}
+color.header=hex:{{base0D-hex}}
+color.footnote=hex:{{base0C-hex}}
+color.warning=hex:{{base00-hex}} on hex:{{base0A-hex}}
+color.error=hex:{{base08-hex}}
+color.debug=hex:{{base0C-hex}}
+
+# Task state
+color.completed=hex:{{base03-hex}}
+color.deleted=hex:{{base03-hex}}
+color.active=hex:{{base00-hex}} on hex:{{base0B-hex}}
+color.recurring=hex:{{base0C-hex}}
+color.scheduled=hex:{{base0D-hex}}
+color.until=
+color.blocked=hex:{{base03-hex}}
+color.blocking=hex:{{base00-hex}} on hex:{{base0E-hex}}
+
+# Project
+color.project.none=
+
+# Priority
+color.uda.priority.H=hex:{{base09-hex}}
+color.uda.priority.M=hex:{{base0A-hex}}
+color.uda.priority.L=hex:{{base0D-hex}}
+
+# Tags
+color.tag.next=hex:{{base0E-hex}}
+color.tag.none=
+color.tagged=
+
+# Due
+color.due=hex:{{base0A-hex}}
+color.due.today=hex:{{base09-hex}}
+color.overdue=hex:{{base08-hex}}
+
+# Report: burndown
+color.burndown.done=hex:{{base00-hex}} on hex:{{base0B-hex}}
+color.burndown.pending=hex:{{base00-hex}} on hex:{{base08-hex}}
+color.burndown.started=hex:{{base00-hex}} on hex:{{base0A-hex}}
+
+# Report: history
+color.history.add=hex:{{base00-hex}} on hex:{{base08-hex}}
+color.history.delete=hex:{{base00-hex}} on hex:{{base0A-hex}}
+color.history.done=hex:{{base00-hex}} on hex:{{base0B-hex}}
+
+# Report: summary
+color.summary.background=on hex:{{base01-hex}}
+color.summary.bar=hex:{{base00-hex}} on hex:{{base0B-hex}}
+
+# Command: calendar
+color.calendar.due=hex:{{base00-hex}} on hex:{{base0A-hex}}
+color.calendar.due.today=hex:{{base00-hex}} on hex:{{base09-hex}}
+color.calendar.holiday=hex:{{base00-hex}} on hex:{{base0E-hex}}
+color.calendar.overdue=hex:{{base00-hex}} on hex:{{base08-hex}}
+color.calendar.scheduled=hex:{{base00-hex}} on hex:{{base0D-hex}}
+color.calendar.today=hex:{{base00-hex}} on hex:{{base0C-hex}}
+color.calendar.weekend=hex:{{base03-hex}}
+color.calendar.weeknumber=hex:{{base03-hex}}
+
+# Command: sync
+color.sync.added=hex:{{base0B-hex}}
+color.sync.changed=hex:{{base0A-hex}}
+color.sync.rejected=hex:{{base08-hex}}
+
+# Command: undo
+color.undo.after=hex:{{base0B-hex}}
+color.undo.before=hex:{{base08-hex}}
