@@ -11,6 +11,10 @@ closest (CIEDE2000) entry of the 6x6x6 cube ("rgbRGB") or the gray ramp
 Cube entries 16-21 (rgb000-rgb005) are never chosen: tinted-shell redefines
 those slots to extra scheme colors, so they would not show the expected color.
 
+Also used as the tinty item hook (quantize.py %f): for schemes without a
+prebuilt theme (schemes.extras, generated schemes) tinty renders the template
+at apply time, leaving raw hex: tokens.
+
 Standard library only.
 """
 

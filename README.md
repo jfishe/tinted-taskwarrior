@@ -29,9 +29,18 @@ name = "tinted-taskwarrior"
 path = "https://github.com/jfishe/tinted-taskwarrior"
 themes-dir = "taskwarrior"
 supported-systems = ["base16", "base24", "tinted8"]
+hook = "python3 -I ~/.local/share/tinted-theming/tinty/repos/tinted-taskwarrior/quantize.py %f"
 ```
 
-No hook is needed: tinty keeps the current theme at
+The hook is needed for schemes that aren't in the upstream tinted-theming
+schemes repo, such as those from `[[schemes.extras]]` or `tinty generate-scheme`.
+tinty has no prebuilt theme for those, so `tinty apply` renders the template
+itself. That output still has raw `hex:RRGGBB` colors, which Taskwarrior rejects
+("The color 'hex:002b36' is not recognized"). The hook converts them to
+xterm-256 names. For upstream schemes the applied file is already converted, and
+the hook leaves it unchanged.
+
+tinty keeps the current theme at
 `~/.local/share/tinted-theming/tinty/tinted-taskwarrior-taskwarrior-file.theme`.
 Run `tinty install && tinty apply <scheme>` once, then include it from each
 taskrc that should follow the scheme:
@@ -67,6 +76,8 @@ never affected.
 
 - `quantize.py`: rewrites each `hex:RRGGBB` in the built themes to the nearest
   xterm-256 color name. It uses only the standard library and is idempotent.
+  `build.sh` runs it on `taskwarrior/`, and the tinty hook runs it on the
+  applied theme.
 - `taskwarrior/`: built output, one file per scheme. It's committed, and tinty
   reads it directly.
 - `demo/`: an isolated Taskwarrior rc and database for previewing themes.
