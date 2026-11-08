@@ -26,3 +26,8 @@ dev = [
 
 [tool.pyrefly]
 search-path = [".", "tests"]
+
+[tool.rumdl.MD013]
+# Code blocks hold copy-paste config lines that cannot be wrapped.
+code-blocks = false
+tables = false

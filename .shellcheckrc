@@ -1,0 +1,4 @@
+# Follow `. "$(dirname -- "$0")/lib.sh"` and resolve `# shellcheck source=demo/lib.sh`
+# from the repo root, for the prek hook and editors alike.
+external-sources=true
+source-path=SCRIPTDIR/..
