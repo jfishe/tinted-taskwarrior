@@ -54,11 +54,40 @@ def test_quantize_file_rejects_malformed_token(tmp_path):
 def test_quantize_file_is_idempotent(tmp_path):
     theme = tmp_path / "t.theme"
     theme.write_text("# c\ncolor.header=hex:268bd2\ncolor.until=\n")
-    quantize.quantize_file(theme)
+    assert quantize.quantize_file(theme) is True
     first = theme.read_text()
-    quantize.quantize_file(theme)
+    mtime = theme.stat().st_mtime_ns
+    assert quantize.quantize_file(theme) is False
+    assert theme.stat().st_mtime_ns == mtime
     assert (
         theme.read_text()
         == first
         == ("# c\ncolor.header=rgb024  # #268bd2\ncolor.until=\n")
     )
+
+
+@pytest.fixture
+def raw_theme(tmp_path, monkeypatch):
+    monkeypatch.delenv("TINTY_THEME_OPERATION", raising=False)
+    theme = tmp_path / "t.theme"
+    theme.write_text("color.header=hex:268bd2\n")
+    return theme
+
+
+def test_main_reports_rewritten_theme(raw_theme, capsys):
+    assert quantize.main([str(raw_theme)]) == 0
+    assert capsys.readouterr().out == "quantized 1 theme(s)\n"
+
+
+def test_main_silent_when_unchanged(raw_theme, capsys):
+    quantize.quantize_file(raw_theme)
+    assert quantize.main([str(raw_theme)]) == 0
+    assert capsys.readouterr().out == ""
+
+
+def test_main_silent_on_tinty_init(raw_theme, capsys, monkeypatch):
+    """tinty init (every shell start) re-renders extras and re-runs hooks."""
+    monkeypatch.setenv("TINTY_THEME_OPERATION", "init")
+    assert quantize.main([str(raw_theme)]) == 0
+    assert capsys.readouterr().out == ""
+    assert "hex:" not in raw_theme.read_text()

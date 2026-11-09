@@ -38,7 +38,9 @@ tinty has no prebuilt theme for those, so `tinty apply` renders the template
 itself. That output still has raw `hex:RRGGBB` colors, which Taskwarrior rejects
 ("The color 'hex:002b36' is not recognized"). The hook converts them to
 xterm-256 names. For upstream schemes the applied file is already converted, and
-the hook leaves it unchanged.
+the hook leaves it unchanged. The hook prints `quantized N theme(s)` only when
+it rewrote a file, and never during `tinty init` (shell start), which re-runs
+every hook.
 
 tinty keeps the current theme at
 `~/.local/share/tinted-theming/tinty/tinted-taskwarrior-taskwarrior-file.theme`.

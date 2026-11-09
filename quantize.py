@@ -13,12 +13,16 @@ those slots to extra scheme colors, so they would not show the expected color.
 
 Also used as the tinty item hook (quantize.py %f): for schemes without a
 prebuilt theme (schemes.extras, generated schemes) tinty renders the template
-at apply time, leaving raw hex: tokens.
+at apply time, leaving raw hex: tokens. Files are written only when their
+content changes, and "quantized N theme(s)" counts only those. tinty re-runs
+hooks on every `tinty init` (shell start), so the message is suppressed when
+TINTY_THEME_OPERATION=init; errors are still reported.
 
 Standard library only.
 """
 
 import math
+import os
 import re
 import sys
 from functools import cache
@@ -147,13 +151,18 @@ def quantize_line(line: str) -> str:
     return f"{body}  # {comment}"
 
 
-def quantize_file(path: Path) -> None:
-    lines = path.read_text().splitlines()
-    new = [quantize_line(line) for line in lines]
+def quantize_file(path: Path) -> bool:
+    """Rewrite path in place; return True if its content changed."""
+    old = path.read_text()
+    new = [quantize_line(line) for line in old.splitlines()]
     leftover = [i + 1 for i, line in enumerate(new) if "hex:" in line.split("#")[0]]
     if leftover:
         raise ValueError(f"{path}: malformed hex: token on line(s) {leftover}")
-    path.write_text("\n".join(new) + "\n")
+    text = "\n".join(new) + "\n"
+    if text == old:
+        return False
+    path.write_text(text)
+    return True
 
 
 def iter_themes(paths: list[str]):
@@ -171,12 +180,12 @@ def main(argv: list[str]) -> int:
     try:
         count = 0
         for path in iter_themes(argv):
-            quantize_file(path)
-            count += 1
+            count += quantize_file(path)
     except (OSError, ValueError) as e:
         print(f"quantize.py: {e}", file=sys.stderr)
         return 1
-    print(f"quantized {count} theme(s)")
+    if count and os.environ.get("TINTY_THEME_OPERATION") != "init":
+        print(f"quantized {count} theme(s)")
     return 0
 
 
