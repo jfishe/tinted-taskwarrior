@@ -30,7 +30,9 @@ t log "Review pull requests" project:Work.Website entry:now-1wk end:now-1d >/dev
 # Pending work.
 add "Pay the electricity bill" project:Home priority:H due:yesterday +bills entry:now-2wk >/dev/null
 add "File expense report" project:Work priority:M due:now-3d entry:now-3wk >/dev/null
-add "Call the plumber" project:Home due:today priority:H entry:now-4d >/dev/null
+# due:eod, not due:today: today is 00:00, which the calendar colors as overdue;
+# color.calendar.due.today needs a task due later today.
+add "Call the plumber" project:Home due:eod priority:H entry:now-4d >/dev/null
 add "Plant tomatoes" project:Garden due:tomorrow scheduled:today entry:now-10d >/dev/null
 add "Prune the roses" project:Garden due:eow priority:L entry:now-6d >/dev/null
 
@@ -45,7 +47,9 @@ t "$design" annotate "Mockups in the shared drive" >/dev/null
 tag=$(add "Tag v2.0 release" project:Work.Release priority:H +next due:now+5d entry:now-9d)
 t "$tag" annotate "Waiting on QA sign-off" >/dev/null
 add "Fix crash on empty config" project:Work.Release +bug priority:H entry:now-3d >/dev/null
-add "Update changelog" project:Work.Release scheduled:now+2d priority:L entry:now-2d >/dev/null
+# Scheduled on a day nothing is due (eow is at most +6d), or the calendar's
+# due color hides color.calendar.scheduled.
+add "Update changelog" project:Work.Release scheduled:now+8d priority:L entry:now-2d >/dev/null
 
 add "Water the plants" project:Garden recur:weekly due:now+1d entry:now-3wk >/dev/null
 add "Take out recycling" project:Home recur:weekly due:now+3d priority:L entry:now-4wk >/dev/null
