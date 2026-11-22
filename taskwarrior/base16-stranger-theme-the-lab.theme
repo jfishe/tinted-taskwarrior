@@ -20,9 +20,9 @@ rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,sc
 
 # General decoration
 color.label=rgb123  # #73879c
-color.label.sort=rgb304  # #b10dc9
+color.label.sort=rgb245  # #7fdbff
 color.alternate=on gray4  # #2e313a
-color.header=rgb304  # #b10dc9
+color.header=rgb245  # #7fdbff
 color.footnote=rgb044  # #39cccc
 color.warning=gray2 on rgb540  # #1a1d26 on #ffdc00
 color.error=rgb500  # #ff4136
@@ -33,10 +33,10 @@ color.completed=rgb123  # #73879c
 color.deleted=rgb123  # #73879c
 color.active=gray2 on rgb041  # #1a1d26 on #2ecc40
 color.recurring=rgb044  # #39cccc
-color.scheduled=rgb304  # #b10dc9
+color.scheduled=rgb245  # #7fdbff
 color.until=
 color.blocked=rgb123  # #73879c
-color.blocking=gray2 on rgb245  # #1a1d26 on #7fdbff
+color.blocking=gray2 on rgb304  # #1a1d26 on #b10dc9
 
 # Project
 color.project.none=
@@ -44,10 +44,10 @@ color.project.none=
 # Priority
 color.uda.priority.H=rgb520  # #ff851b
 color.uda.priority.M=rgb540  # #ffdc00
-color.uda.priority.L=rgb304  # #b10dc9
+color.uda.priority.L=rgb245  # #7fdbff
 
 # Tags
-color.tag.next=rgb245  # #7fdbff
+color.tag.next=rgb304  # #b10dc9
 color.tag.none=
 color.tagged=
 
@@ -73,9 +73,9 @@ color.summary.bar=gray2 on rgb041  # #1a1d26 on #2ecc40
 # Command: calendar
 color.calendar.due=gray2 on rgb540  # #1a1d26 on #ffdc00
 color.calendar.due.today=gray2 on rgb520  # #1a1d26 on #ff851b
-color.calendar.holiday=gray2 on rgb245  # #1a1d26 on #7fdbff
+color.calendar.holiday=gray2 on rgb304  # #1a1d26 on #b10dc9
 color.calendar.overdue=gray2 on rgb500  # #1a1d26 on #ff4136
-color.calendar.scheduled=gray2 on rgb304  # #1a1d26 on #b10dc9
+color.calendar.scheduled=gray2 on rgb245  # #1a1d26 on #7fdbff
 color.calendar.today=gray2 on rgb044  # #1a1d26 on #39cccc
 color.calendar.weekend=rgb123  # #73879c
 color.calendar.weeknumber=rgb123  # #73879c

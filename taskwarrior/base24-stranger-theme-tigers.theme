@@ -20,23 +20,23 @@ rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,sc
 
 # General decoration
 color.label=rgb121  # #758975
-color.label.sort=rgb323  # #b294bb
+color.label.sort=rgb234  # #81a2be
 color.alternate=on gray4  # #2c322c
-color.header=rgb323  # #b294bb
-color.footnote=rgb234  # #81a2be
+color.header=rgb234  # #81a2be
+color.footnote=rgb233  # #8abeb7
 color.warning=gray2 on rgb542  # #181e18 on #f0c674
 color.error=rgb411  # #cc6666
-color.debug=rgb234  # #81a2be
+color.debug=rgb233  # #8abeb7
 
 # Task state
 color.completed=rgb121  # #758975
 color.deleted=rgb121  # #758975
 color.active=gray2 on rgb331  # #181e18 on #b5bd68
-color.recurring=rgb234  # #81a2be
-color.scheduled=rgb323  # #b294bb
+color.recurring=rgb233  # #8abeb7
+color.scheduled=rgb234  # #81a2be
 color.until=
 color.blocked=rgb121  # #758975
-color.blocking=gray2 on rgb520  # #181e18 on #ff7f2a
+color.blocking=gray2 on rgb323  # #181e18 on #b294bb
 
 # Project
 color.project.none=
@@ -44,10 +44,10 @@ color.project.none=
 # Priority
 color.uda.priority.H=rgb421  # #de935f
 color.uda.priority.M=rgb542  # #f0c674
-color.uda.priority.L=rgb323  # #b294bb
+color.uda.priority.L=rgb234  # #81a2be
 
 # Tags
-color.tag.next=rgb520  # #ff7f2a
+color.tag.next=rgb323  # #b294bb
 color.tag.none=
 color.tagged=
 
@@ -73,10 +73,10 @@ color.summary.bar=gray2 on rgb331  # #181e18 on #b5bd68
 # Command: calendar
 color.calendar.due=gray2 on rgb542  # #181e18 on #f0c674
 color.calendar.due.today=gray2 on rgb421  # #181e18 on #de935f
-color.calendar.holiday=gray2 on rgb520  # #181e18 on #ff7f2a
+color.calendar.holiday=gray2 on rgb323  # #181e18 on #b294bb
 color.calendar.overdue=gray2 on rgb411  # #181e18 on #cc6666
-color.calendar.scheduled=gray2 on rgb323  # #181e18 on #b294bb
-color.calendar.today=gray2 on rgb234  # #181e18 on #81a2be
+color.calendar.scheduled=gray2 on rgb234  # #181e18 on #81a2be
+color.calendar.today=gray2 on rgb233  # #181e18 on #8abeb7
 color.calendar.weekend=rgb121  # #758975
 color.calendar.weeknumber=rgb121  # #758975
 

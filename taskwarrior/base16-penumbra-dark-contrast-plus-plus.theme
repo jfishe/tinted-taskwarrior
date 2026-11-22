@@ -1,6 +1,6 @@
 # tinted-taskwarrior
 # Scheme name: Penumbra Dark Contrast Plus Plus
-# Scheme author: Zachary Weiss (https://github.com/zacharyweiss)
+# Scheme author: Neal McKee (https://github.com/nealmckee/penumbra)
 # Scheme: base16-penumbra-dark-contrast-plus-plus (dark)
 #
 # Template: https://github.com/jfishe/tinted-taskwarrior
@@ -19,72 +19,72 @@
 rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged,uda.
 
 # General decoration
-color.label=gray9  # #636363
-color.label.sort=rgb135  # #6eb2fd
-color.alternate=on gray2  # #181b1f
-color.header=rgb135  # #6eb2fd
-color.footnote=rgb045  # #00c4d7
-color.warning=gray1 on rgb331  # #0d0f13 on #a9b852
-color.error=rgb522  # #f58c81
-color.debug=rgb045  # #00c4d7
+color.label=gray8  # #575b62
+color.label.sort=rgb035  # #009edb
+color.alternate=on gray2  # #1b1e23
+color.header=rgb035  # #009edb
+color.footnote=rgb033  # #00a8a4
+color.warning=gray1 on rgb330  # #101317 on #b4a724
+color.error=rgb422  # #e17782
+color.debug=rgb033  # #00a8a4
 
 # Task state
-color.completed=gray9  # #636363
-color.deleted=gray9  # #636363
-color.active=gray1 on rgb143  # #0d0f13 on #54c794
-color.recurring=rgb045  # #00c4d7
-color.scheduled=rgb135  # #6eb2fd
+color.completed=gray8  # #575b62
+color.deleted=gray8  # #575b62
+color.active=gray1 on rgb131  # #101317 on #62b06c
+color.recurring=rgb033  # #00a8a4
+color.scheduled=rgb035  # #009edb
 color.until=
-color.blocked=gray9  # #636363
-color.blocking=gray1 on rgb325  # #0d0f13 on #b69cf6
+color.blocked=gray8  # #575b62
+color.blocking=gray1 on rgb224  # #101317 on #8a90d4
 
 # Project
 color.project.none=
 
 # Priority
-color.uda.priority.H=rgb531  # #e09f47
-color.uda.priority.M=rgb331  # #a9b852
-color.uda.priority.L=rgb135  # #6eb2fd
+color.uda.priority.H=rgb420  # #d88f4c
+color.uda.priority.M=rgb330  # #b4a724
+color.uda.priority.L=rgb035  # #009edb
 
 # Tags
-color.tag.next=rgb325  # #b69cf6
+color.tag.next=rgb224  # #8a90d4
 color.tag.none=
 color.tagged=
 
 # Due
-color.due=rgb331  # #a9b852
-color.due.today=rgb531  # #e09f47
-color.overdue=rgb522  # #f58c81
+color.due=rgb330  # #b4a724
+color.due.today=rgb420  # #d88f4c
+color.overdue=rgb422  # #e17782
 
 # Report: burndown
-color.burndown.done=gray1 on rgb143  # #0d0f13 on #54c794
-color.burndown.pending=gray1 on rgb522  # #0d0f13 on #f58c81
-color.burndown.started=gray1 on rgb331  # #0d0f13 on #a9b852
+color.burndown.done=gray1 on rgb131  # #101317 on #62b06c
+color.burndown.pending=gray1 on rgb422  # #101317 on #e17782
+color.burndown.started=gray1 on rgb330  # #101317 on #b4a724
 
 # Report: history
-color.history.add=gray1 on rgb522  # #0d0f13 on #f58c81
-color.history.delete=gray1 on rgb331  # #0d0f13 on #a9b852
-color.history.done=gray1 on rgb143  # #0d0f13 on #54c794
+color.history.add=gray1 on rgb422  # #101317 on #e17782
+color.history.delete=gray1 on rgb330  # #101317 on #b4a724
+color.history.done=gray1 on rgb131  # #101317 on #62b06c
 
 # Report: summary
-color.summary.background=on gray2  # #181b1f
-color.summary.bar=gray1 on rgb143  # #0d0f13 on #54c794
+color.summary.background=on gray2  # #1b1e23
+color.summary.bar=gray1 on rgb131  # #101317 on #62b06c
 
 # Command: calendar
-color.calendar.due=gray1 on rgb331  # #0d0f13 on #a9b852
-color.calendar.due.today=gray1 on rgb531  # #0d0f13 on #e09f47
-color.calendar.holiday=gray1 on rgb325  # #0d0f13 on #b69cf6
-color.calendar.overdue=gray1 on rgb522  # #0d0f13 on #f58c81
-color.calendar.scheduled=gray1 on rgb135  # #0d0f13 on #6eb2fd
-color.calendar.today=gray1 on rgb045  # #0d0f13 on #00c4d7
-color.calendar.weekend=gray9  # #636363
-color.calendar.weeknumber=gray9  # #636363
+color.calendar.due=gray1 on rgb330  # #101317 on #b4a724
+color.calendar.due.today=gray1 on rgb420  # #101317 on #d88f4c
+color.calendar.holiday=gray1 on rgb224  # #101317 on #8a90d4
+color.calendar.overdue=gray1 on rgb422  # #101317 on #e17782
+color.calendar.scheduled=gray1 on rgb035  # #101317 on #009edb
+color.calendar.today=gray1 on rgb033  # #101317 on #00a8a4
+color.calendar.weekend=gray8  # #575b62
+color.calendar.weeknumber=gray8  # #575b62
 
 # Command: sync
-color.sync.added=rgb143  # #54c794
-color.sync.changed=rgb331  # #a9b852
-color.sync.rejected=rgb522  # #f58c81
+color.sync.added=rgb131  # #62b06c
+color.sync.changed=rgb330  # #b4a724
+color.sync.rejected=rgb422  # #e17782
 
 # Command: undo
-color.undo.after=rgb143  # #54c794
-color.undo.before=rgb522  # #f58c81
+color.undo.after=rgb131  # #62b06c
+color.undo.before=rgb422  # #e17782
